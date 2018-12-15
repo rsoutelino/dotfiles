@@ -1,0 +1,80 @@
+[/]
+warn-vte-config-issue=false
+
+[profiles/27482691-53a7-44c6-a469-52217d37c1be]
+foreground-color='#647A82'
+visible-name='Pata'
+palette=['#063541', '#DB312E', '#849900', '#B48800', '#258AD1', '#D23581', '#29A097', '#EDE7D4', '#002A35', '#CA4A15', '#576D74', '#647A82', '#829395', '#6B70C3', '#92A0A0', '#FCF5E2']
+badge-color-set=false
+default-size-rows=40
+default-size-columns=120
+use-system-font=false
+cursor-colors-set=false
+highlight-colors-set=false
+use-theme-colors=false
+bold-color-set=false
+font='Source Code Pro 10'
+background-color='#FCF5E2'
+
+[profiles]
+list=['2b7c4080-0ddd-46c5-8f23-563fd3ba789d', '03c59d3a-9273-4d61-988e-fe9c3637ad10', '27482691-53a7-44c6-a469-52217d37c1be', '4162cd1a-2715-4c01-9de3-9160260575e7', '872ee087-2cb3-4f23-bee9-7ac568d9bbec']
+
+[profiles/872ee087-2cb3-4f23-bee9-7ac568d9bbec]
+foreground-color='#829395'
+visible-name='Acenet'
+palette=['#063541', '#DB312E', '#849900', '#B48800', '#258AD1', '#D23581', '#29A097', '#EDE7D4', '#002A35', '#CA4A15', '#576D74', '#647A82', '#829395', '#6B70C3', '#92A0A0', '#FCF5E2']
+badge-color-set=false
+default-size-rows=40
+default-size-columns=120
+use-system-font=false
+cursor-colors-set=false
+highlight-colors-set=false
+use-theme-colors=false
+bold-color-set=false
+font='Source Code Pro 10'
+background-color='#002A35'
+
+[profiles/03c59d3a-9273-4d61-988e-fe9c3637ad10]
+foreground-color='#F8F8F2'
+visible-name='Monokai'
+palette=['#272822', '#F92672', '#A6E22E', '#F4BF75', '#66D9EF', '#AE81FF', '#A1EFE4', '#F8F8F2', '#75715E', '#F92672', '#A6E22E', '#F4BF75', '#66D9EF', '#AE81FF', '#A1EFE4', '#F9F8F5']
+badge-color-set=false
+default-size-rows=40
+default-size-columns=120
+use-system-font=false
+cursor-colors-set=false
+highlight-colors-set=false
+use-theme-colors=false
+bold-color-set=false
+font='Source Code Pro 10'
+background-color='#272822'
+
+[profiles/2b7c4080-0ddd-46c5-8f23-563fd3ba789d]
+foreground-color='#A7A7A7'
+visible-name='Default'
+palette=['#1E1E1E', '#CF6A4C', '#8F9D6A', '#F9EE98', '#7587A6', '#9B859D', '#AFC4DB', '#A7A7A7', '#5F5A60', '#CF6A4C', '#8F9D6A', '#F9EE98', '#7587A6', '#9B859D', '#AFC4DB', '#FFFFFF']
+badge-color-set=false
+default-size-rows=40
+default-size-columns=120
+use-system-font=false
+cursor-colors-set=false
+highlight-colors-set=false
+use-theme-colors=false
+bold-color-set=false
+font='Source Code Pro 10'
+background-color='#1E1E1E'
+
+[profiles/4162cd1a-2715-4c01-9de3-9160260575e7]
+foreground-color='#A1B0B8'
+visible-name='Raglan'
+palette=['#252525', '#FF5252', '#C3D82C', '#FFC135', '#42A5F5', '#D81B60', '#00ACC1', '#F5F5F5', '#708284', '#FF5252', '#C3D82C', '#FFC135', '#42A5F5', '#D81B60', '#00ACC1', '#F5F5F5']
+badge-color-set=false
+default-size-rows=40
+default-size-columns=120
+use-system-font=false
+cursor-colors-set=false
+highlight-colors-set=false
+use-theme-colors=false
+bold-color-set=false
+font='Source Code Pro 10'
+background-color='#263238'
