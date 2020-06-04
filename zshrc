@@ -114,6 +114,11 @@ apilog() {
     gcloud logging read "resource.type=cloud_run_revision AND resource.labels.service_name=$1" --format="table(timestamp:sort=1,textPayload)" | grep -v 'TotalAlloc'
 }
 
+flog() {
+    gcloud logging read "resource.type=cloud_function AND resource.labels.function_name=$1" --format="table(timestamp:sort=1,textPayload)" | grep -v 'TotalAlloc'
+}
+
+
 
 #if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
 #        source /etc/profile.d/vte.sh
