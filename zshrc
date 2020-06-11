@@ -118,7 +118,7 @@ flog() {
     gcloud logging read "resource.type=cloud_function AND resource.labels.function_name=$1" --format="table(timestamp:sort=1,textPayload)" | grep -v 'TotalAlloc'
 }
 
-
+xset r rate 250 60
 
 #if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
 #        source /etc/profile.d/vte.sh
