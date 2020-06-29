@@ -92,7 +92,7 @@ alias dc='docker-compose'
 alias k='kubectl'
 
 alias gst='git status'
-alias pyeditmask="docker run -ti --rm -e DISPLAY=$DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix -v /source:/source -v /home/rsoutelino:/home/rsoutelino  -v /static:/static metocean/roms_tools"
+alias pyeditmask="docker run -ti --rm -e DISPLAY=$DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix -v /source:/source -v /home/rsoutelino:/home/rsoutelino  -v /static:/static registry.gitlab.com/oceanum/docker/roms_tools_pyeditmask"
 alias regargo='gcloud container clusters get-credentials argo --zone us-central1-b --project oceanum-dev'
 
 VIRTUALENVWRAPPER_PYTHON=python3
@@ -116,6 +116,10 @@ apilog() {
 
 flog() {
     gcloud logging read "resource.type=cloud_function AND resource.labels.function_name=$1" --format="table(timestamp:sort=1,textPayload)" | grep -v 'TotalAlloc'
+}
+
+billing() {
+    bq query "select sku.description, usage_start_time, cost, project.id from billing.gcp_billing_export_v1_0161AC_94A65A_1A5164 where usage_start_time > '$1 00:00:00' and usage_start_time < '$2 00:00:00' order by cost DESC"
 }
 
 xset r rate 250 60
