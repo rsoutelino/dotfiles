@@ -119,7 +119,7 @@ flog() {
 }
 
 billing() {
-    bq query "select sku.description, usage_start_time, cost, project.id from billing.gcp_billing_export_v1_0161AC_94A65A_1A5164 where usage_start_time > '$1 00:00:00' and usage_start_time < '$2 00:00:00' order by cost DESC"
+	bq query "select sku.description, usage_start_time, cost, project.id from billing.gcp_billing_export_v1_0161AC_94A65A_1A5164 where usage_start_time > '$(date -d "1 day ago" '+%Y-%m-%d 00:00:00')' and usage_start_time < '$(date '+%Y-%m-%d 00:00:00')' order by cost DESC"
 }
 
 xset r rate 250 60
