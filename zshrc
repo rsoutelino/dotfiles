@@ -110,6 +110,10 @@ plog() {
     gcloud logging read "resource.type=k8s_container AND resource.labels.pod_name=$1" --format="table(timestamp:sort=1,textPayload)" | grep -v 'TotalAlloc'
 }
 
+pylog() {
+    gcloud logging read "resource.type=global AND logName=projects/oceanum-api/logs/python"  --format="table(timestamp:sort=1,jsonPayload.message)"
+}
+
 apilog() {
     gcloud logging read "resource.type=cloud_run_revision AND resource.labels.service_name=$1" --format="table(timestamp:sort=1,textPayload)" | grep -v 'TotalAlloc'
 }
@@ -119,7 +123,7 @@ flog() {
 }
 
 billing() {
-	bq query "select sku.description, usage_start_time, cost, project.id from billing.gcp_billing_export_v1_0161AC_94A65A_1A5164 where usage_start_time > '$(date -d "1 day ago" '+%Y-%m-%d 00:00:00')' and usage_start_time < '$(date '+%Y-%m-%d 00:00:00')' order by cost DESC"
+	gcloud config set project oceanum-prod && bq query "select sku.description, usage_start_time, cost, project.id from billing.gcp_billing_export_v1_0161AC_94A65A_1A5164 where usage_start_time > '$(date -d "1 day ago" '+%Y-%m-%d 00:00:00')' and usage_start_time < '$(date '+%Y-%m-%d 00:00:00')' order by cost DESC"
 }
 
 xset r rate 250 60
