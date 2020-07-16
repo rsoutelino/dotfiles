@@ -111,7 +111,7 @@ plog() {
 }
 
 pylog() {
-    gcloud logging read "resource.type=global AND logName=projects/oceanum-api/logs/python"  --format="table(timestamp:sort=1,jsonPayload.message)"
+    gcloud logging read "resource.type=global AND logName=projects/$1/logs/python"  --format="table(timestamp:sort=1,jsonPayload.message)"
 }
 
 apilog() {
