@@ -97,7 +97,8 @@ alias regargo='gcloud container clusters get-credentials argo --zone us-central1
 
 VIRTUALENVWRAPPER_PYTHON=python3
 export WORKON_HOME=$HOME/Envs
-source /usr/local/bin/virtualenvwrapper.sh
+export VIRTUALENVWRAPPER_VIRTUALENV=/home/rsoutelino/.local/bin/virtualenv
+source /home/rsoutelino/.local/bin/virtualenvwrapper.sh
 
 export ANSIBLE_HOST_KEY_CHECKING=False
 export GOOGLE_APPLICATION_CREDENTIALS='/source/ansible/secrets/keys/consultancy.json'
