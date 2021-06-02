@@ -92,13 +92,14 @@ alias dc='docker-compose'
 alias k='kubectl'
 
 alias gst='git status'
-alias pyeditmask="docker run -ti --rm -e DISPLAY=$DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix -v /source:/source -v /home/rsoutelino:/home/rsoutelino  -v /static:/static registry.gitlab.com/oceanum/docker/roms_tools_pyeditmask"
-alias regargo='gcloud container clusters get-credentials argo --zone us-central1-b --project oceanum-dev'
+alias pyeditmask="xhost + && docker run -u root -ti --rm --runtime=runc  -e DISPLAY=$DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix -v $HOME:$HOME -v /source:/source  -v /static:/static rsoutelino/pyeditmask"
 
 VIRTUALENVWRAPPER_PYTHON=python3
 export WORKON_HOME=$HOME/Envs
-export VIRTUALENVWRAPPER_VIRTUALENV=/home/rsoutelino/.local/bin/virtualenv
-source /home/rsoutelino/.local/bin/virtualenvwrapper.sh
+# export VIRTUALENVWRAPPER_VIRTUALENV=/home/rsoutelino/.local/bin/virtualenv
+export VIRTUALENVWRAPPER_VIRTUALENV=/usr/bin/virtualenv
+# source /home/rsoutelino/.local/bin/virtualenvwrapper.sh
+source /usr/share/virtualenvwrapper/virtualenvwrapper.sh
 
 export ANSIBLE_HOST_KEY_CHECKING=False
 export GOOGLE_APPLICATION_CREDENTIALS='/source/ansible/secrets/keys/consultancy.json'
