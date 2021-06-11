@@ -128,6 +128,8 @@ billing() {
 	gcloud config set project oceanum-prod && bq query "select sku.description, usage_start_time, cost, project.id from billing.gcp_billing_export_v1_0161AC_94A65A_1A5164 where usage_start_time > '$(date -d "1 day ago" '+%Y-%m-%d 00:00:00')' and usage_start_time < '$(date '+%Y-%m-%d 00:00:00')' order by cost DESC"
 }
 
+log-swellmap-api() {kubectl logs deployment/swellmap-api -f}
+
 xset r rate 250 60
 
 #if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
