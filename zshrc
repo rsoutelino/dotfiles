@@ -102,7 +102,8 @@ export VIRTUALENVWRAPPER_VIRTUALENV=/usr/bin/virtualenv
 source /usr/share/virtualenvwrapper/virtualenvwrapper.sh
 
 export ANSIBLE_HOST_KEY_CHECKING=False
-export GOOGLE_APPLICATION_CREDENTIALS='/source/ansible/secrets/keys/consultancy.json'
+export GOOGLE_APPLICATION_CREDENTIALS='/config/swellmap-api/swellmap-web-servicekey.json'
+export CLOUDSDK_PYTHON_SITEPACKAGES=1
 
 wlog() {
     gcloud logging read "resource.type=k8s_container AND labels.k8s-pod/workflows_argoproj_io/workflow=$1" --format="table(timestamp:sort=1,textPayload)" | grep -v 'TotalAlloc'
