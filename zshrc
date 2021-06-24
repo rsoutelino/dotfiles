@@ -130,6 +130,9 @@ billing() {
 }
 
 log-swellmap-api() {kubectl logs deployment/swellmap-api -f}
+log-swellmap-submitter() {kubectl logs deployment/swellmap-forecast-update -f}
+log-swellmap-health() {kubectl logs deployment/swellmap-data-health -f}
+
 
 xset r rate 250 60
 
